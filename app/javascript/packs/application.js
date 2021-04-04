@@ -8,6 +8,17 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+import $ from 'jquery'
+import 'select2'
+
+$(document).on('turbolinks:load', function() {
+   $(".select2").select2({
+    tags: true,
+    tokenSeparetors: [',',' ']
+    })
+});
+
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
