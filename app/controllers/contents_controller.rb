@@ -37,6 +37,12 @@ class ContentsController < ApplicationController
         @content = Content.find(params[:id])
     end
 
+    def destroy
+        @content = Content.find(params[:id])
+        @content.destroy
+        redirect-to contents_path, notice: 'destruído com sucesso'
+    end
+
     private
     def content_prams
         params.require(:content).permit(:title, :description)
