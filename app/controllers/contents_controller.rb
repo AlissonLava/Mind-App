@@ -37,7 +37,9 @@ class ContentsController < ApplicationController
         end
     end
 
-    def show; end
+    def show
+        @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true)
+    end
 
     def destroy
         @content.destroy
